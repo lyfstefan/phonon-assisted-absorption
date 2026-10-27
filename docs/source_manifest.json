@@ -1,0 +1,32 @@
+[
+  {
+    "source_filename": "fitting_both_KK_and_KGamma_single.py",
+    "source_sha256": "7d93eb4dd25b8740ad735a2e417bd2deeb1711ccbb0ed6401c1a787e6f0ab13e",
+    "extracted_functions": [
+      "Alpha_fit",
+      "alpha",
+      "n_B"
+    ],
+    "public_module": "_legacy_model_i.py",
+    "extraction": "AST-selected function source text only; no top-level data, fits or plots; trailing whitespace removed"
+  },
+  {
+    "source_filename": "fitting_both_KK_and_KGamma_single_interlayer_same_freq.py",
+    "source_sha256": "3b62f3ea1e6218066423daef81e05177c4df540b5c41d7615d7c43a4fc93152a",
+    "extracted_functions": [
+      "Alpha0",
+      "Alpha1",
+      "Alpha2",
+      "Alpha_fit",
+      "LorenzianPeak",
+      "W0",
+      "W1",
+      "W2",
+      "alpha",
+      "nB",
+      "tildeG"
+    ],
+    "public_module": "_legacy_model_ii.py",
+    "extraction": "AST-selected function source text only; no top-level data, fits or plots; trailing whitespace removed"
+  }
+]

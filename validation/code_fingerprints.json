@@ -1,0 +1,11 @@
+{
+  "examples/theory_spectra.py": "d6062f950bfd3b64ea893092e9e75664f77b672dee6ebe71ff0c225793d97360",
+  "phonon_absorption/__init__.py": "9d24dfcdc37b20cf3cb94354d567a2777067e61d8a0e97a8d137e13505382b4d",
+  "phonon_absorption/_legacy_model_i.py": "059b86e28f2d8cefc07ea0088a0998f7d09b7ed2d7fb96718e48645d91c58739",
+  "phonon_absorption/_legacy_model_ii.py": "c900180c51a472982714fce852f00b933cb64f8b9fad75ff213bba95b4809b0d",
+  "phonon_absorption/models.py": "416db3d0f8cc9320d4840703d3fd2248cb6554ec8aacde74e53b5893325bff65",
+  "phonon_absorption/parameters.py": "04043430831c751f6dca76a4a0b93c16194cdddd7aac48a4dae199f06a299d2a",
+  "tests/test_physical_limits.py": "1ea2ea5347745f7a65acf913417ec49ee52dfb3491c40cd91ea47cc1dce9fa35",
+  "validation/__init__.py": "dc65775726e53836e51bf989942b73ad60be1d4f20675f10a71b0f6735705e5c",
+  "validation/run.py": "d66f94eeddfe43db02fc99a1a2c7147f8bfe4842c64d2dba4151f5478d8993f8"
+}

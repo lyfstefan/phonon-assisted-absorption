@@ -1,0 +1,156 @@
+{
+  "environment": {
+    "python": "3.11.5",
+    "numpy": "1.26.4",
+    "scipy": "1.15.1"
+  },
+  "grid": {
+    "points": 512,
+    "min_eV": 0.85,
+    "max_eV": 1.45
+  },
+  "models": {
+    "I": {
+      "matched_historical_cutoff_relative_L2": 1.2571744637975486e-15,
+      "historical_vs_default_cutoff_relative_L2": 1.2526929255975392e-15,
+      "cutoff80_vs120_relative_L2": 0.0,
+      "min_spectrum": 0.23783065899433228,
+      "max_spectrum": 2.4791757394871397
+    },
+    "II": {
+      "matched_historical_cutoff_relative_L2": 1.4593528211190866e-15,
+      "historical_vs_default_cutoff_relative_L2": 3.351541059093147e-05,
+      "cutoff80_vs120_relative_L2": 0.0,
+      "min_spectrum": 0.20843423169056535,
+      "max_spectrum": 2.4795628411142103
+    }
+  },
+  "low_temperature_checks": [
+    {
+      "model": "I",
+      "kBT_eV": 0,
+      "finite_nonnegative": true
+    },
+    {
+      "model": "II",
+      "kBT_eV": 0,
+      "finite_nonnegative": true
+    },
+    {
+      "model": "I",
+      "kBT_eV": 0.001,
+      "finite_nonnegative": true
+    },
+    {
+      "model": "II",
+      "kBT_eV": 0.001,
+      "finite_nonnegative": true
+    },
+    {
+      "model": "I",
+      "kBT_eV": 0.001723466652429,
+      "finite_nonnegative": true
+    },
+    {
+      "model": "II",
+      "kBT_eV": 0.001723466652429,
+      "finite_nonnegative": true
+    },
+    {
+      "model": "I",
+      "kBT_eV": 0.0232,
+      "finite_nonnegative": true
+    },
+    {
+      "model": "II",
+      "kBT_eV": 0.0232,
+      "finite_nonnegative": true
+    }
+  ],
+  "limit_checks": [
+    {
+      "g_norm": 0,
+      "kBT_eV": 0,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 0,
+      "kBT_eV": 0.001,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 0,
+      "kBT_eV": 0.0232,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 0,
+      "kBT_eV": 0.05,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 0.4,
+      "kBT_eV": 0,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 0.4,
+      "kBT_eV": 0.001,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 0.4,
+      "kBT_eV": 0.0232,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 0.4,
+      "kBT_eV": 0.05,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 0.85,
+      "kBT_eV": 0,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 0.85,
+      "kBT_eV": 0.001,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 0.85,
+      "kBT_eV": 0.0232,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 0.85,
+      "kBT_eV": 0.05,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 1.34,
+      "kBT_eV": 0,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 1.34,
+      "kBT_eV": 0.001,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 1.34,
+      "kBT_eV": 0.0232,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    },
+    {
+      "g_norm": 1.34,
+      "kBT_eV": 0.05,
+      "theta_zero_gcv_2g_relative_L2": 0.0
+    }
+  ],
+  "thermal_weight_sum": 0.9999999999999997,
+  "max_detailed_balance_error": 2.220446049250313e-16,
+  "scope": "Rounded parameter anchors; not a refit, original-data release, universal stability proof, or full paper-figure reproduction.",
+  "all_checks_passed": true
+}

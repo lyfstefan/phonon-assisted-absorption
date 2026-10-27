@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite the associated research paper when using these models."
+title: "phonon-assisted-absorption - accompanying scientific code"
+authors:
+  - family-names: "Liu"
+    given-names: "Yifan"
+repository-code: "https://github.com/lyfstefan/phonon-assisted-absorption"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Liu"
+      given-names: "Yifan"
+    - family-names: "Dawson"
+      given-names: "Robert"
+    - family-names: "Gabor"
+      given-names: "Nathaniel"
+    - family-names: "Aji"
+      given-names: "Vivek"
+  title: "Phonon-assisted absorption in transition metal dichalcogenide heterostructures"
+  journal: "Physical Review B"
+  volume: "113"
+  start: "235306"
+  doi: "10.1103/v3sr-lg47"
+  year: 2026
