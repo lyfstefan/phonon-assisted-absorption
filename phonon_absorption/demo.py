@@ -49,7 +49,7 @@ def run(output, font_path=None):
             y,
             fit,
             "Synthetic observations",
-            f"Synthetic validation: Model {model}",
+            rf"$\mathrm{{{model}}}$",
             font_path=font_path,
         )
         apply_style(font_path=font_path)
@@ -81,12 +81,12 @@ def run(output, font_path=None):
                     linestyle=DASH[ti],
                 )
             axes[row, col].set(
-                title=f"Model {model}",
-                xlabel="Photon energy (eV)",
-                ylabel=r"$\alpha$ (model units)",
+                title=rf"$\mathrm{{{model}}}$",
+                xlabel=r"$E$ (eV)",
+                ylabel=r"$\alpha$ (arb. units)",
             )
             axes[row, col].legend(frameon=False)
-    fig.suptitle("Theory: temperature dependence")
+
     apply_style(font_path=font_path)
     save(fig, output / "temperature_spectra")
     plt.close(fig)
@@ -94,9 +94,7 @@ def run(output, font_path=None):
     energy = np.linspace(0.8, 1.6, 1200)
     params = ANCHORS["II"]
     total = np.zeros_like(energy)
-    for ci, (label, ch) in enumerate(
-        zip(["KK channel", r"$\Gamma$-K channel"], params["channels"])
-    ):
+    for ci, (label, ch) in enumerate(zip([r"$KK$", r"$\Gamma K$"], params["channels"])):
         pieces = model_ii_components(
             energy,
             ch,
@@ -114,12 +112,12 @@ def run(output, font_path=None):
             color=[C["blue"], C["orange"]][ci],
             label=label,
         )
-    ax.plot(energy, total, c=C["black"], label="Model II total")
+    ax.plot(energy, total, c=C["black"], label="Total")
     ax.set(
-        xlabel="Photon energy (eV)",
-        ylabel=r"$\alpha$ (model units)",
+        xlabel=r"$E$ (eV)",
+        ylabel=r"$\alpha$ (arb. units)",
     )
-    fig.suptitle("Exciton channels")
+
     ax.legend(
         frameon=False, loc="lower center", bbox_to_anchor=(0.5, 1.02), labelspacing=0.15
     )

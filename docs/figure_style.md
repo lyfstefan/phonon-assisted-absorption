@@ -19,8 +19,8 @@ is placed above the bar. Comparable panels retain the same numerical
 normalization even though their colorbars are separate. No long shared
 colorbars are used. PDF pages are not cropped; PNG and SVG are also exported.
 
-Numerical arrays, fitted parameters, probability normalization and continuous
-color limits are unchanged. The quantum-walk overview is arranged as three
+Numerical arrays, fitted parameters and probability normalization are unchanged.
+Flux maps display the oriented phase modulo $2\pi$ on a cyclic scale. The quantum-walk overview is arranged as three
 rows and four columns; its detailed two-case plots retain eigenvalue legends.
 
 ## LaTeX dependencies

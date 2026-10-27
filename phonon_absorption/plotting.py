@@ -19,8 +19,8 @@ def plot_fit(
     energy,
     observations,
     fit,
-    data_label="Supplied observations",
-    title="Fixed-energy spectral fit",
+    data_label="Data",
+    title=None,
     font_path=None,
 ):
     apply_style(font_path=font_path)
@@ -60,18 +60,12 @@ def plot_fit(
             color=C["red"],
             lw=1.2,
             zorder=FIT_ZORDER,
-            label=f"Model {fit['model']} fit",
+            label="Fit",
         )
         axes[1, col].scatter(x[use], (y - pred)[use], s=9, color=C["blue"])
         axes[1, col].axhline(0, color=C["gray"], lw=0.8)
-        axes[0, col].set(
-            ylabel=(
-                r"$\alpha$ (model units)"
-                if "Synthetic" in data_label
-                else r"$\alpha$ (source units)"
-            )
-        )
-        axes[1, col].set(xlabel="Photon energy (eV)", ylabel="Residual")
+        axes[0, col].set(ylabel=r"$\alpha$ (arb. units)")
+        axes[1, col].set(xlabel=r"$E$ (eV)", ylabel=r"$\Delta\alpha$")
 
     handles, labels = axes[0, 0].get_legend_handles_labels()
     fig.legend(
@@ -82,7 +76,7 @@ def plot_fit(
         ncol=2 if len(windows) > 1 else 1,
         frameon=False,
     )
-    heading = fig.suptitle(f"{title}\nMSE = {fit['metrics']['mse']:.6g}")
+    heading = fig.suptitle(title or rf"$\mathrm{{{fit['model']}}}$")
     heading.set_in_layout(False)
     fig.set_layout_engine("constrained", rect=(0, 0, 1, 0.78))
     return fig

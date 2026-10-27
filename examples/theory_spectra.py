@@ -30,15 +30,15 @@ def main():
         ax.plot(
             energy,
             y,
-            label=f"Model {model}",
+            label=rf"$\mathrm{{{model}}}$",
             color=[C["blue"], C["red"]][index],
             linestyle=DASH[index],
         )
     ax.set(
-        xlabel="Photon energy (eV)",
-        ylabel=r"$\alpha$ (model units)",
+        xlabel=r"$E$ (eV)",
+        ylabel=r"$\alpha$ (arb. units)",
     )
-    fig.suptitle("Rounded-parameter theory")
+
     ax.legend(frameon=False, loc="lower center", bbox_to_anchor=(0.5, 1.02), ncol=2)
     save(fig, args.output / "theory_spectra")
     plt.close(fig)

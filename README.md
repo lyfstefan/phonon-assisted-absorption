@@ -112,6 +112,8 @@ fit diagnostics and truncation estimates are documented in
 [numerical methods](docs/numerics.md); measured results are in
 [validation/report.json](validation/report.json).
 
+In the residual panels, $\Delta\alpha$ denotes observations minus the fitted spectrum.
+
 The figures use the shared [publication style](docs/figure_style.md).
 
 ## Reference
