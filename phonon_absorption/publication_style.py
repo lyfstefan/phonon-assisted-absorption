@@ -254,10 +254,16 @@ def apply_style(*, font_path=None):
     )
 
 
-def save(fig, destination):
+def save(fig, destination, *, legend_fontsize=None):
     destination = Path(destination)
     destination.parent.mkdir(parents=True, exist_ok=True)
     unify_typography(fig)
+    if legend_fontsize is not None:
+        legends = [ax.get_legend() for ax in all_axes(fig)] + list(fig.legends)
+        for legend in legends:
+            if legend is not None:
+                for text in [*legend.get_texts(), legend.get_title()]:
+                    text.set_fontsize(legend_fontsize)
     for ax in all_axes(fig):
         if not hasattr(ax, "_colorbar"):
             ax.set_box_aspect(1)
@@ -349,7 +355,9 @@ def save(fig, destination):
                 "ticks_pt": DETAIL_FONT,
                 "colorbar_ticks_pt": DETAIL_FONT,
                 "annotations_pt": DETAIL_FONT,
-                "legends_pt": DETAIL_FONT,
+                "legends_pt": (
+                    DETAIL_FONT if legend_fontsize is None else legend_fontsize
+                ),
                 "page_width_cm": float(fig.get_figwidth() * 2.54),
                 "page_height_cm": float(fig.get_figheight() * 2.54),
                 "font_family": "Computer Modern Roman",
