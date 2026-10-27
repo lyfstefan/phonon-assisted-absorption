@@ -54,7 +54,6 @@ def run(output, font_path=None):
         )
         apply_style(font_path=font_path)
         save(fig, output / f"synthetic_fit_{model}")
-        fig.savefig(output / f"synthetic_fit_{model}.svg")
         plt.close(fig)
         summaries[model] = {
             "mse": fit["metrics"]["mse"],
@@ -66,7 +65,9 @@ def run(output, font_path=None):
             "n_observations": len(x),
         }
     # Explicit theory temperature dependence, using the same table anchors.
-    fig, axes = plt.subplots(2, 2, figsize=(width(2), 5.2), constrained_layout=True)
+    fig, axes = plt.subplots(
+        2, 2, figsize=(width(2), width(2)), constrained_layout=True
+    )
     for row, model in enumerate(["I", "II"]):
         for col, (lo, hi) in enumerate([(0.84, 1.08), (1.2, 1.48)]):
             energy = np.linspace(lo, hi, 500)
@@ -88,9 +89,8 @@ def run(output, font_path=None):
     fig.suptitle("Theory: temperature dependence")
     apply_style(font_path=font_path)
     save(fig, output / "temperature_spectra")
-    fig.savefig(output / "temperature_spectra.svg")
     plt.close(fig)
-    fig, ax = plt.subplots(figsize=(width(1), 2.85), constrained_layout=True)
+    fig, ax = plt.subplots(figsize=(width(1), width(1) + 0.85), constrained_layout=True)
     energy = np.linspace(0.8, 1.6, 1200)
     params = ANCHORS["II"]
     total = np.zeros_like(energy)
@@ -125,7 +125,6 @@ def run(output, font_path=None):
     )
     apply_style(font_path=font_path)
     save(fig, output / "channel_decomposition")
-    fig.savefig(output / "channel_decomposition.svg")
     plt.close(fig)
     write_json(
         output / "synthetic_validation.json",

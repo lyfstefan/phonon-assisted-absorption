@@ -1,18 +1,28 @@
 {
-  "template": "v0",
+  "template": "v1_compact_square_frames_latex",
+  "text_engine": "latex",
+  "text_usetex": true,
   "frame_pt": 1.0,
   "axis_labels_pt": 10,
   "ticks_pt": 9,
   "colorbar_ticks_pt": 9,
   "annotations_pt": 9,
   "legends_pt": 9,
-  "page_width_cm": 8.6,
-  "font_family": [
-    "Latin Modern Roman",
-    "LM Roman 10",
-    "CMU Serif",
-    "DejaVu Serif"
+  "page_width_cm": 7.6000000000000005,
+  "page_height_cm": 8.743,
+  "font_family": "Computer Modern Roman",
+  "math_font_family": "Computer Modern Math Italic",
+  "data_frames": [
+    {
+      "bounds_figure_fraction": [
+        0.14964317869010663,
+        0.11069460575257531,
+        0.986073447368421,
+        0.8377757039974785
+      ],
+      "width_cm": 6.3568700419551885,
+      "height_cm": 6.3568700419551885
+    }
   ],
-  "math_fontset": "cm",
-  "pinned_font_file": "/Users/yifanliu/Library/Fonts/lmroman10-regular.otf"
+  "pinned_font_file": null
 }

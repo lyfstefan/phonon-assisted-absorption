@@ -146,7 +146,10 @@ Cite the associated paper using `citation.bib` or `CITATION.cff`.
 
 ## Figure exports
 
-Figures now follow [publication template v0](docs/figure_style.md), with
-LM Roman 10 text, Computer Modern mathematics, 10/9 pt typography and a
-8.6 cm single-column or 17.8 cm double-column printed width. PDF, 300 dpi PNG, SVG and typography records accompany
-the figures. The saved numerical data are unchanged.
+Figures follow [publication style v1](docs/figure_style.md): real LaTeX text
+and mathematics, Computer Modern fonts, 10/9 pt typography, and compact figures
+(7.6 cm single-panel / 15.2 cm multipanel width), with square data axes
+frames and canvas height chosen for the panel arrangement. PDF, 300 dpi PNG,
+SVG and typography records accompany every figure. Plotting now requires
+a LaTeX installation; model evaluation and optimization remain independent
+of the plotting toolchain.

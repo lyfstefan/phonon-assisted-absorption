@@ -1,4 +1,4 @@
-"""Figures with explicit data labels and no TeX/global plotting configuration."""
+"""Compact square fit figures with explicit data labels and LaTeX text."""
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -28,14 +28,17 @@ def plot_fit(
     fig, axes = plt.subplots(
         2,
         len(windows),
-        figsize=(width(2 if len(windows) > 1 else 1), 4.4),
+        figsize=(
+            width(2 if len(windows) > 1 else 1),
+            width(2 if len(windows) > 1 else 1) + 0.6,
+        ),
         sharex="col",
         squeeze=False,
         constrained_layout=False,
-        gridspec_kw={"height_ratios": [3, 1]},
+        gridspec_kw={"height_ratios": [1, 1]},
     )
     fig.subplots_adjust(
-        left=0.11, right=0.985, bottom=0.13, top=0.77, wspace=0.31, hspace=0.09
+        left=0.11, right=0.985, bottom=0.11, top=0.82, wspace=0.31, hspace=0.18
     )
     x, y = np.asarray(energy), np.asarray(observations)
     pred = np.asarray(fit["prediction"])

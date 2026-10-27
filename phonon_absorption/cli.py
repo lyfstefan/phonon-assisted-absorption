@@ -22,7 +22,7 @@ def main():
     )
     parser.add_argument("--output", type=Path, default=Path("examples/output"))
     parser.add_argument(
-        "--font-path", type=Path, help="optional Roman font file to pin at export"
+        "--font-path", type=Path, help="legacy option; LaTeX selects Computer Modern"
     )
     args = parser.parse_args()
     if args.command == "demo":
@@ -77,7 +77,6 @@ def main():
     from .publication_style import save
 
     save(fig, args.output / "fit")
-    fig.savefig(args.output / "fit.svg")
     plt.close(fig)
     print(
         json.dumps(

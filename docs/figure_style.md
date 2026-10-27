@@ -1,28 +1,32 @@
-# Figure style v0
+# Figure style v1: compact square frames, LaTeX
 
-Figures use the user-supplied `publication_style.py` template without changes
-to its style functions. Axis labels are 10 pt; ticks, legends and annotations
-are 9 pt; frames are 1 pt. PNG exports are 300 dpi. Standalone PDF pages are
-8.6 cm wide for simple single-panel figures and 17.8 cm for multipanel figures,
-with no bounding-box crop. SVG versions remain available.
+Following the author's updated instructions, all ordinary letters, numbers,
+legends and mathematical expressions use real LaTeX (`text.usetex=True`).
+The exported PDF embeds Computer Modern Roman/Math Italic fonts (CMR/CMMI),
+matching the requested LaTeX appearance. This explicitly supersedes v0's
+`text.usetex=False` and LM Roman font-file pinning.
 
-The local release explicitly pins `lmroman10-regular.otf` (LM Roman 10 Regular);
-PDF font resources were checked for `LMRoman10-Regular`. Math uses Matplotlib's
-Computer Modern (`mathtext.fontset = cm`). Numerical arrays, fitted parameters,
-probability normalization and heat-map color limits are unchanged. Captions
-are kept in the project documentation; long panels have been rearranged.
+Role-based sizes and the original visual constants are preserved: axis labels
+10 pt; ticks, legends and annotations 9 pt; frames 1 pt; PNG exports 300 dpi.
+Simple figures are 7.6 cm wide and multipanel figures 15.2 cm wide.
+Every data axes frame uses `Axes.set_box_aspect(1)`: its physical width and
+height are equal. This does not require a square overall canvas, nor equal
+x/y data units. Canvas height follows the panel arrangement; colorbars
+remain slim. PDF pages are not cropped at export. SVG versions
+and exact typography/size records accompany every figure.
 
-For portable regeneration, use `--font-path /path/to/lmroman10-regular.otf`.
-Without a supplied font file, the template uses its installed-font fallback
-list. Some LM OpenType files report the family name `Latin Modern Roman`, so
-the literal `LM Roman 10` name alone does not always find them. Pinning the
-file avoids this mismatch. The font file itself is not bundled. Each figure's
-`*_typography.json` records the exact file used and printed page width.
+Numerical arrays, fitted parameters, probability normalization and continuous
+color limits are unchanged. The quantum-walk overview is arranged as three
+rows and four columns; its detailed two-case plots retain eigenvalue legends.
+
+## LaTeX dependencies
+
+Install a TeX distribution with `latex`, `dvipng`, `type1cm`, `type1ec` and
+AMS packages. On Ubuntu, the CI uses:
 
 ```sh
-python -m phonon_absorption.cli demo --font-path /path/to/lmroman10-regular.otf
-python -m examples.theory_spectra --font-path /path/to/lmroman10-regular.otf
+sudo apt-get install texlive-latex-extra cm-super dvipng ghostscript
 ```
 
-Public figures contain synthetic observations or theory only. Real-data
-comparison figures were restyled locally from saved fits without refitting.
+The legacy `--font-path` option remains accepted for compatibility but does
+not override TeX's Computer Modern selection.
