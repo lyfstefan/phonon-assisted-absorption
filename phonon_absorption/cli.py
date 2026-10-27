@@ -21,11 +21,14 @@ def main():
         "--config", type=Path, help="JSON with spec and optional fit settings"
     )
     parser.add_argument("--output", type=Path, default=Path("examples/output"))
+    parser.add_argument(
+        "--font-path", type=Path, help="optional Roman font file to pin at export"
+    )
     args = parser.parse_args()
     if args.command == "demo":
         from .demo import run
 
-        print(json.dumps(run(args.output), indent=2))
+        print(json.dumps(run(args.output, font_path=args.font_path), indent=2))
         return
     if args.data is None or args.config is None:
         parser.error("fit requires --data and --config")
@@ -70,9 +73,11 @@ def main():
     from matplotlib import pyplot as plt
     from .plotting import plot_fit
 
-    fig = plot_fit(data["energy_eV"], data["absorption"], fit)
-    for suffix in ["png", "svg"]:
-        fig.savefig(args.output / f"fit.{suffix}", dpi=170)
+    fig = plot_fit(data["energy_eV"], data["absorption"], fit, font_path=args.font_path)
+    from .publication_style import save
+
+    save(fig, args.output / "fit")
+    fig.savefig(args.output / "fit.svg")
     plt.close(fig)
     print(
         json.dumps(

@@ -143,3 +143,10 @@ effective parameters, not independent sample thermometry.
 [Provenance](docs/provenance.md) and
 [source fingerprints](docs/source_manifest.json) document the inputs.
 Cite the associated paper using `citation.bib` or `CITATION.cff`.
+
+## Figure exports
+
+Figures now follow [publication template v0](docs/figure_style.md), with
+LM Roman 10 text, Computer Modern mathematics, 10/9 pt typography and a
+17.8 cm printed width. PDF, 300 dpi PNG, SVG and typography records accompany
+the figures. The saved numerical data are unchanged.

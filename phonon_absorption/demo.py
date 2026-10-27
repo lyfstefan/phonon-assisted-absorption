@@ -6,6 +6,7 @@ from .models import Channel, VibronicChannel, spectrum, model_ii_components
 from .parameters import ANCHORS
 from .fitting import FitSpec, fit_fixed_energies
 from .output import write_json
+from .publication_style import apply_style, width, save, C, DASH
 
 
 def synthetic_case(model, seed=2026):
@@ -17,13 +18,14 @@ def synthetic_case(model, seed=2026):
     return energy, observed, sigma, truth
 
 
-def run(output):
+def run(output, font_path=None):
     import matplotlib
 
     matplotlib.use("Agg")
     from matplotlib import pyplot as plt
     from .plotting import plot_fit
 
+    apply_style(font_path=font_path)
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     summaries = {}
@@ -43,10 +45,16 @@ def run(output):
             comments="",
         )
         fig = plot_fit(
-            x, y, fit, "Synthetic observations", f"Synthetic validation: Model {model}"
+            x,
+            y,
+            fit,
+            "Synthetic observations",
+            f"Synthetic validation: Model {model}",
+            font_path=font_path,
         )
-        for suffix in ["png", "svg"]:
-            fig.savefig(output / f"synthetic_fit_{model}.{suffix}", dpi=170)
+        apply_style(font_path=font_path)
+        save(fig, output / f"synthetic_fit_{model}")
+        fig.savefig(output / f"synthetic_fit_{model}.svg")
         plt.close(fig)
         summaries[model] = {
             "mse": fit["metrics"]["mse"],
@@ -58,34 +66,37 @@ def run(output):
             "n_observations": len(x),
         }
     # Explicit theory temperature dependence, using the same table anchors.
-    fig, axes = plt.subplots(2, 2, figsize=(10, 7), constrained_layout=True)
+    fig, axes = plt.subplots(2, 2, figsize=(width(2), 5.2), constrained_layout=True)
     for row, model in enumerate(["I", "II"]):
         for col, (lo, hi) in enumerate([(0.84, 1.08), (1.2, 1.48)]):
             energy = np.linspace(lo, hi, 500)
-            for temperature in [0, 20, 100, 270]:
+            for ti, temperature in enumerate([0, 20, 100, 270]):
                 params = {**ANCHORS[model], "kBT_eV": temperature * 8.617333262145e-5}
                 axes[row, col].plot(
                     energy,
                     spectrum(energy, model=model, cutoff=None, **params),
                     label=f"{temperature} K",
+                    color=[C["blue"], C["orange"], C["green"], C["red"]][ti],
+                    linestyle=DASH[ti],
                 )
             axes[row, col].set(
                 title=f"Model {model}",
                 xlabel="Photon energy (eV)",
                 ylabel="Absorption (model units)",
             )
-            axes[row, col].legend(fontsize=8)
-    fig.suptitle(
-        "Theory-only temperature dependence at fixed nonthermal table parameters"
-    )
-    for suffix in ["png", "svg"]:
-        fig.savefig(output / f"temperature_spectra.{suffix}", dpi=170)
+            axes[row, col].legend(frameon=False)
+    fig.suptitle("Theory: temperature dependence")
+    apply_style(font_path=font_path)
+    save(fig, output / "temperature_spectra")
+    fig.savefig(output / "temperature_spectra.svg")
     plt.close(fig)
-    fig, ax = plt.subplots(figsize=(8, 4), constrained_layout=True)
+    fig, ax = plt.subplots(figsize=(width(2), 3.1), constrained_layout=True)
     energy = np.linspace(0.8, 1.6, 1200)
     params = ANCHORS["II"]
     total = np.zeros_like(energy)
-    for label, ch in zip(["KK channel", "Gamma-K channel"], params["channels"]):
+    for ci, (label, ch) in enumerate(
+        zip(["KK channel", r"$\Gamma$-K channel"], params["channels"])
+    ):
         pieces = model_ii_components(
             energy,
             ch,
@@ -96,16 +107,23 @@ def run(output):
         )
         channel = sum(pieces.values())
         total += channel
-        ax.plot(energy, channel, "--", label=label)
-    ax.plot(energy, total, c="black", label="Model II total")
+        ax.plot(
+            energy,
+            channel,
+            linestyle=DASH[ci + 1],
+            color=[C["blue"], C["orange"]][ci],
+            label=label,
+        )
+    ax.plot(energy, total, c=C["black"], label="Model II total")
     ax.set(
         xlabel="Photon energy (eV)",
         ylabel="Absorption (model units)",
         title="Theory-only exciton-channel decomposition",
     )
-    ax.legend()
-    for suffix in ["png", "svg"]:
-        fig.savefig(output / f"channel_decomposition.{suffix}", dpi=170)
+    ax.legend(frameon=False)
+    apply_style(font_path=font_path)
+    save(fig, output / "channel_decomposition")
+    fig.savefig(output / "channel_decomposition.svg")
     plt.close(fig)
     write_json(
         output / "synthetic_validation.json",
