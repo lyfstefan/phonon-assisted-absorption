@@ -3,6 +3,7 @@
 Retains the user's v0 colors, line styles, frames and role-based type sizes.
 User-requested changes: TeX, reference-matched 2.5 cm square frames, and
 independent short colorbars. Canvas dimensions follow the panel arrangement.
+Compact internal legends and observation/fit layering are reusable defaults.
 """
 
 from pathlib import Path
@@ -39,6 +40,48 @@ DASH = [
 AXIS_FONT = 10
 DETAIL_FONT = 9
 FRAME_CM = 2.5
+INSET_LEGEND_FONT = 7
+LEGEND_DECIMALS = 2
+OBSERVATION_ZORDER = 2
+FIT_ZORDER = 3
+
+
+def legend_value(value):
+    """Format a displayed legend number without changing its stored precision."""
+    return f"{value:.{LEGEND_DECIMALS}f}"
+
+
+def inset_legend(ax, *, title=None, ncol=2, data_top=None):
+    """Place a compact key inside the frame; optionally reserve space above data.
+
+    Put a repeated quantity in title and only its values in individual labels.
+    For a linear y-axis, data_top can reserve display space without changing data.
+    """
+    if data_top is not None:
+        if ax.get_yscale() != "linear":
+            raise ValueError("Automatic legend headroom requires a linear y-axis")
+        bottom = min(0.0, float(ax.dataLim.y0))
+        span = float(data_top) - bottom
+        if span > 0:
+            ax.set_ylim(bottom - 0.03 * span, float(data_top) + 0.7 * span)
+    legend = ax.legend(
+        loc="upper center",
+        bbox_to_anchor=(0.5, 0.99),
+        ncol=ncol,
+        title=title,
+        borderaxespad=0,
+        frameon=False,
+        handlelength=0.85,
+        handletextpad=0.3,
+        labelspacing=0.08,
+        columnspacing=0.65,
+        borderpad=0.15,
+        markerscale=0.75,
+        fontsize=INSET_LEGEND_FONT,
+        title_fontsize=INSET_LEGEND_FONT,
+    )
+    legend._publication_fontsize = INSET_LEGEND_FONT
+    return legend
 
 
 def all_axes(fig):
@@ -200,7 +243,7 @@ def unify_typography(fig):
         legend = ax.get_legend()
         if legend:
             for text in [*legend.get_texts(), legend.get_title()]:
-                text.set_fontsize(DETAIL_FONT)
+                text.set_fontsize(getattr(legend, "_publication_fontsize", DETAIL_FONT))
     for text in fig.texts:
         text.set_fontsize(AXIS_FONT)
     for legend in fig.legends:
