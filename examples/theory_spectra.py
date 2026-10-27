@@ -20,7 +20,7 @@ def main():
     args.output.mkdir(parents=True, exist_ok=True)
     apply_style(font_path=args.font_path)
     energy = np.linspace(0.8, 1.6, 1600)
-    fig, ax = plt.subplots(figsize=(width(2), 3.1), constrained_layout=True)
+    fig, ax = plt.subplots(figsize=(width(1), 2.65), constrained_layout=True)
     columns = [energy]
     for index, model in enumerate(["I", "II"]):
         y = spectrum(energy, model=model, **ANCHORS[model])
@@ -35,9 +35,9 @@ def main():
     ax.set(
         xlabel="Photon energy (eV)",
         ylabel="Absorption (model units)",
-        title="Theory at rounded table parameters",
     )
-    ax.legend(frameon=False)
+    fig.suptitle("Theory at rounded parameters")
+    ax.legend(frameon=False, loc="lower center", bbox_to_anchor=(0.5, 1.02), ncol=2)
     save(fig, args.output / "theory_spectra")
     fig.savefig(args.output / "theory_spectra.svg")
     plt.close(fig)

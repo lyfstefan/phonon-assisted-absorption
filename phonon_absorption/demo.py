@@ -90,7 +90,7 @@ def run(output, font_path=None):
     save(fig, output / "temperature_spectra")
     fig.savefig(output / "temperature_spectra.svg")
     plt.close(fig)
-    fig, ax = plt.subplots(figsize=(width(2), 3.1), constrained_layout=True)
+    fig, ax = plt.subplots(figsize=(width(1), 2.85), constrained_layout=True)
     energy = np.linspace(0.8, 1.6, 1200)
     params = ANCHORS["II"]
     total = np.zeros_like(energy)
@@ -118,9 +118,11 @@ def run(output, font_path=None):
     ax.set(
         xlabel="Photon energy (eV)",
         ylabel="Absorption (model units)",
-        title="Theory-only exciton-channel decomposition",
     )
-    ax.legend(frameon=False)
+    fig.suptitle("Exciton-channel decomposition")
+    ax.legend(
+        frameon=False, loc="lower center", bbox_to_anchor=(0.5, 1.02), labelspacing=0.15
+    )
     apply_style(font_path=font_path)
     save(fig, output / "channel_decomposition")
     fig.savefig(output / "channel_decomposition.svg")

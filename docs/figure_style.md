@@ -3,7 +3,8 @@
 Figures use the user-supplied `publication_style.py` template without changes
 to its style functions. Axis labels are 10 pt; ticks, legends and annotations
 are 9 pt; frames are 1 pt. PNG exports are 300 dpi. Standalone PDF pages are
-17.8 cm wide, with no bounding-box crop. SVG versions remain available.
+8.6 cm wide for simple single-panel figures and 17.8 cm for multipanel figures,
+with no bounding-box crop. SVG versions remain available.
 
 The local release explicitly pins `lmroman10-regular.otf` (LM Roman 10 Regular);
 PDF font resources were checked for `LMRoman10-Regular`. Math uses Matplotlib's
