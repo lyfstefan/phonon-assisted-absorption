@@ -36,9 +36,9 @@ def main():
         )
     ax.set(
         xlabel="Photon energy (eV)",
-        ylabel="Absorption (model units)",
+        ylabel=r"$\alpha$ (model units)",
     )
-    fig.suptitle("Theory at rounded parameters")
+    fig.suptitle("Rounded-parameter theory")
     ax.legend(frameon=False, loc="lower center", bbox_to_anchor=(0.5, 1.02), ncol=2)
     save(fig, args.output / "theory_spectra")
     plt.close(fig)

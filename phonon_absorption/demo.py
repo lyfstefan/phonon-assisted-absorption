@@ -83,7 +83,7 @@ def run(output, font_path=None):
             axes[row, col].set(
                 title=f"Model {model}",
                 xlabel="Photon energy (eV)",
-                ylabel="Absorption (model units)",
+                ylabel=r"$\alpha$ (model units)",
             )
             axes[row, col].legend(frameon=False)
     fig.suptitle("Theory: temperature dependence")
@@ -117,9 +117,9 @@ def run(output, font_path=None):
     ax.plot(energy, total, c=C["black"], label="Model II total")
     ax.set(
         xlabel="Photon energy (eV)",
-        ylabel="Absorption (model units)",
+        ylabel=r"$\alpha$ (model units)",
     )
-    fig.suptitle("Exciton-channel decomposition")
+    fig.suptitle("Exciton channels")
     ax.legend(
         frameon=False, loc="lower center", bbox_to_anchor=(0.5, 1.02), labelspacing=0.15
     )

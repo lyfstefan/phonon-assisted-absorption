@@ -8,12 +8,16 @@ matching the requested LaTeX appearance. This explicitly supersedes v0's
 
 Role-based sizes and the original visual constants are preserved: axis labels
 10 pt; ticks, legends and annotations 9 pt; frames 1 pt; PNG exports 300 dpi.
-Simple figures are 7.6 cm wide and multipanel figures 15.2 cm wide.
-Every data axes frame uses `Axes.set_box_aspect(1)`: its physical width and
-height are equal. This does not require a square overall canvas, nor equal
-x/y data units. Canvas height follows the panel arrangement; colorbars
-remain slim. PDF pages are not cropped at export. SVG versions
-and exact typography/size records accompany every figure.
+The canvas is fitted to the reference image's font/frame proportions: each
+data frame is approximately 2.5 cm square, with `Axes.set_box_aspect(1)`.
+This does not set equal x/y data units. Canvas dimensions follow the number
+and arrangement of panels, rather than a fixed overall paper width.
+
+Each heatmap has its own thin colorbar: 60% of its frame height and 4.5%
+of its frame width, with the bottoms aligned. A compact mathematical label
+is placed above the bar. Comparable panels retain the same numerical
+normalization even though their colorbars are separate. No long shared
+colorbars are used. PDF pages are not cropped; PNG and SVG are also exported.
 
 Numerical arrays, fitted parameters, probability normalization and continuous
 color limits are unchanged. The quantum-walk overview is arranged as three
@@ -22,7 +26,7 @@ rows and four columns; its detailed two-case plots retain eigenvalue legends.
 ## LaTeX dependencies
 
 Install a TeX distribution with `latex`, `dvipng`, `type1cm`, `type1ec` and
-AMS packages. On Ubuntu, the CI uses:
+AMS and textcomp packages. On Ubuntu, the CI uses:
 
 ```sh
 sudo apt-get install texlive-latex-extra cm-super dvipng ghostscript
@@ -30,3 +34,7 @@ sudo apt-get install texlive-latex-extra cm-super dvipng ghostscript
 
 The legacy `--font-path` option remains accepted for compatibility but does
 not override TeX's Computer Modern selection.
+
+The TeX preamble is `\usepackage{amsmath}\usepackage{textcomp}`.
+Operator names use math subscripts (`$U_1$`, `$U_2$`), dimensionless ratios
+use math mode (`$V/t$`), and phase letters use mathematical italics.

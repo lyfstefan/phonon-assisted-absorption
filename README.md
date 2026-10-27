@@ -148,8 +148,8 @@ Cite the associated paper using `citation.bib` or `CITATION.cff`.
 
 Figures follow [publication style v1](docs/figure_style.md): real LaTeX text
 and mathematics, Computer Modern fonts, 10/9 pt typography, and compact figures
-(7.6 cm single-panel / 15.2 cm multipanel width), with square data axes
-frames and canvas height chosen for the panel arrangement. PDF, 300 dpi PNG,
+with approximately 2.5 cm square data frames, reference-matched typography,
+and independent short, bottom-aligned colorbars labeled above. PDF, 300 dpi PNG,
 SVG and typography records accompany every figure. Plotting now requires
 a LaTeX installation; model evaluation and optimization remain independent
 of the plotting toolchain.

@@ -57,7 +57,13 @@ def plot_fit(
         )
         axes[1, col].scatter(x[use], (y - pred)[use], s=9, color=C["blue"])
         axes[1, col].axhline(0, color=C["gray"], lw=0.8)
-        axes[0, col].set(ylabel="Absorption (model units)")
+        axes[0, col].set(
+            ylabel=(
+                r"$\alpha$ (model units)"
+                if "Synthetic" in data_label
+                else r"$\alpha$ (source units)"
+            )
+        )
         axes[1, col].set(xlabel="Photon energy (eV)", ylabel="Residual")
 
     handles, labels = axes[0, 0].get_legend_handles_labels()
@@ -69,7 +75,7 @@ def plot_fit(
         ncol=2 if len(windows) > 1 else 1,
         frameon=False,
     )
-    fig.suptitle(
-        f"{title}\nMSE = {fit['metrics']['mse']:.6g}",
-    )
+    heading = fig.suptitle(f"{title}\nMSE = {fit['metrics']['mse']:.6g}")
+    heading.set_in_layout(False)
+    fig.set_layout_engine("constrained", rect=(0, 0, 1, 0.78))
     return fig
