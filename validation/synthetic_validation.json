@@ -1,0 +1,20 @@
+{
+  "seed": 2026,
+  "data_origin": "synthetic only",
+  "models": {
+    "I": {
+      "mse": 0.0003850630555153883,
+      "success": true,
+      "rmse_against_generating_theory": 0.005478006679535992,
+      "noise_sigma": 0.02,
+      "n_observations": 120
+    },
+    "II": {
+      "mse": 0.0003668463267038946,
+      "success": true,
+      "rmse_against_generating_theory": 0.006941972797058092,
+      "noise_sigma": 0.02,
+      "n_observations": 120
+    }
+  }
+}

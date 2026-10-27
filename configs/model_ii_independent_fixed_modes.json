@@ -1,0 +1,5 @@
+{
+  "spec": {"model":"II", "exciton_energies_eV":[1.281,0.897], "shared_phonon_energy":false,
+           "shared_linewidth":false, "fixed_phonon_energies_eV":[0.033,0.0295]},
+  "starts":5, "seed":2026, "max_nfev":400, "cutoff":null, "tail_tolerance":1e-11
+}

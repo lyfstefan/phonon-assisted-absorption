@@ -1,0 +1,98 @@
+{
+  "environment": {
+    "python": "3.11.5",
+    "numpy": "1.26.4",
+    "scipy": "1.15.1"
+  },
+  "scope": "512 energies, two channels, rounded anchors, 40 warm repetitions; excludes imports; same parameters repeated; not whole-domain or fitting speedup",
+  "models": {
+    "I": {
+      "source_functions_native_cutoff": {
+        "median_seconds": 0.0008784994861343876,
+        "p95_seconds": 0.0008954597607953473
+      },
+      "stable_fixed80": {
+        "median_seconds": 0.0008215004927478731,
+        "p95_seconds": 0.0008792586595518513
+      },
+      "stable_adaptive_including_preparation": {
+        "median_seconds": 0.0007704579911660403,
+        "p95_seconds": 0.0018976083316374556
+      },
+      "prepared_adaptive_evaluation_only": {
+        "median_seconds": 0.00010677050158847123,
+        "p95_seconds": 0.00011099760449724272
+      },
+      "adaptive_diagnostics": [
+        {
+          "first_sideband": -26,
+          "last_sideband": 31,
+          "terms": 58,
+          "retained_weight": 1.0000000000000002,
+          "omitted_thermal_mass_estimate": 3.456991711311233e-30,
+          "adaptive": true,
+          "tail_method": "scipy_cdf_sf",
+          "weight_method": "scipy_pmf",
+          "exciton_energy_eV": 1.281,
+          "spectral_absolute_truncation_bound_estimate": 1.9935774063044042e-29
+        },
+        {
+          "first_sideband": -23,
+          "last_sideband": 37,
+          "terms": 61,
+          "retained_weight": 0.9999999999994428,
+          "omitted_thermal_mass_estimate": 5.587770529963473e-13,
+          "adaptive": true,
+          "tail_method": "scipy_cdf_sf",
+          "weight_method": "scipy_pmf",
+          "exciton_energy_eV": 0.897,
+          "spectral_absolute_truncation_bound_estimate": 5.1043156962802404e-12
+        }
+      ]
+    },
+    "II": {
+      "source_functions_native_cutoff": {
+        "median_seconds": 0.000784874995588325,
+        "p95_seconds": 0.0008249166814493946
+      },
+      "stable_fixed80": {
+        "median_seconds": 0.0008666250068927184,
+        "p95_seconds": 0.0009908933963743037
+      },
+      "stable_adaptive_including_preparation": {
+        "median_seconds": 0.0008320830092998222,
+        "p95_seconds": 0.0008885649047442711
+      },
+      "prepared_adaptive_evaluation_only": {
+        "median_seconds": 0.0001320000010309741,
+        "p95_seconds": 0.00014016876957612112
+      },
+      "adaptive_diagnostics": [
+        {
+          "first_sideband": -27,
+          "last_sideband": 32,
+          "terms": 60,
+          "retained_weight": 0.9999999999999994,
+          "omitted_thermal_mass_estimate": 1.400022207220496e-32,
+          "adaptive": true,
+          "tail_method": "scipy_cdf_sf",
+          "weight_method": "scipy_pmf",
+          "exciton_energy_eV": 1.281,
+          "spectral_absolute_truncation_bound_estimate": 8.671931334865003e-32
+        },
+        {
+          "first_sideband": -22,
+          "last_sideband": 37,
+          "terms": 60,
+          "retained_weight": 0.9999999999994195,
+          "omitted_thermal_mass_estimate": 5.804250327292822e-13,
+          "adaptive": true,
+          "tail_method": "scipy_cdf_sf",
+          "weight_method": "scipy_pmf",
+          "exciton_energy_eV": 0.898,
+          "spectral_absolute_truncation_bound_estimate": 5.2161125642214504e-12
+        }
+      ]
+    }
+  }
+}

@@ -28,5 +28,25 @@
     ],
     "public_module": "_legacy_model_ii.py",
     "extraction": "AST-selected function source text only; no top-level data, fits or plots; trailing whitespace removed"
+  },
+  {
+    "source_filename": "fitting_both_KK_and_KGamma_single_interlayer_diff_freq.py",
+    "source_sha256": "e5b37a0e1ea2545b942b2f9e01e507b99484bb5a56d10390a527a33098db267c",
+    "extracted_functions": [
+      "Alpha0",
+      "Alpha1",
+      "Alpha2",
+      "Alpha_fit",
+      "LorenzianPeak",
+      "W0",
+      "W1",
+      "W2",
+      "alpha",
+      "nB",
+      "tildeG",
+      "Alpha_fit_gamma12 (nested, no captured variables)"
+    ],
+    "public_module": "_legacy_model_ii_independent.py",
+    "extraction": "AST-selected pure function source; trailing whitespace removed; excludes embedded data and top-level fit"
   }
 ]

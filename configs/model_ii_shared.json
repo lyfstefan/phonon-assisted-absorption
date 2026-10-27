@@ -1,0 +1,4 @@
+{
+  "spec": {"model":"II", "exciton_energies_eV":[1.280999,0.898]},
+  "starts":5, "seed":2026, "max_nfev":400, "cutoff":null, "tail_tolerance":1e-11
+}

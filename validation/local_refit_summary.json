@@ -1,0 +1,640 @@
+{
+  "data_origin": "110 embedded comparison points in author research scripts; local bibliography points to Barati et al., Nano Letters (2022), DOI 10.1021/acs.nanolett.2c00944; raw/digitization rights not established",
+  "experimental_points_distributed": false,
+  "fit_method": "new bounded least_squares with profiled NNLS amplitudes",
+  "scope": "New local refits, not recovery of original paper fits. Different fixed-energy and phonon assumptions; MSE alone is not formal model selection.",
+  "fits": {
+    "I": {
+      "model": "I",
+      "spec": {
+        "model": "I",
+        "exciton_energies_eV": [
+          1.281,
+          0.897
+        ],
+        "shared_phonon_energy": true,
+        "shared_linewidth": true,
+        "fixed_phonon_energies_eV": null
+      },
+      "parameters": {
+        "phonon_energy_eV": 0.037139202597711286,
+        "linewidth_eV": 0.023619899038263843,
+        "kBT_eV": 0.027645455511285326,
+        "coupling_0": 1.560257890614735,
+        "coupling_1": 2.545521560870622
+      },
+      "channels": [
+        {
+          "channel": {
+            "exciton_energy_eV": 1.281,
+            "coupling": 1.560257890614735,
+            "amplitude": 0.1376772989094447,
+            "mixing_angle_rad": 0.0
+          },
+          "phonon_energy_eV": 0.037139202597711286,
+          "linewidth_eV": 0.023619899038263843
+        },
+        {
+          "channel": {
+            "exciton_energy_eV": 0.897,
+            "coupling": 2.545521560870622,
+            "amplitude": 0.22765707065420454,
+            "mixing_angle_rad": 0.0
+          },
+          "phonon_energy_eV": 0.037139202597711286,
+          "linewidth_eV": 0.023619899038263843
+        }
+      ],
+      "amplitudes": [
+        0.1376772989094447,
+        0.22765707065420454
+      ],
+      "metrics": {
+        "n_observations": 110,
+        "rss": 0.8977346692356476,
+        "mse": 0.008161224265778614,
+        "weighted_rss": 0.8977346692356476,
+        "chi_square": null,
+        "nominal_dof": 103
+      },
+      "optimizer": {
+        "method": "bounded least_squares with NNLS-profiled amplitudes",
+        "success": true,
+        "multistart_seed": 2026,
+        "trials": [
+          {
+            "start": 0,
+            "initial": {
+              "phonon_energy_eV": 0.0346,
+              "linewidth_eV": 0.0241,
+              "kBT_eV": 0.0284,
+              "coupling_0": 1.5755,
+              "coupling_1": 2.6136
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 6,
+            "weighted_rss": 0.9640752788789451
+          },
+          {
+            "start": 1,
+            "initial": {
+              "phonon_energy_eV": 0.02773949058988417,
+              "linewidth_eV": 0.025549441983318107,
+              "kBT_eV": 0.014936082917846635,
+              "coupling_0": 2.1252595823190616,
+              "coupling_1": 3.0306617837224956
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 29,
+            "weighted_rss": 0.9954580816211952
+          },
+          {
+            "start": 2,
+            "initial": {
+              "phonon_energy_eV": 0.03207378925285251,
+              "linewidth_eV": 0.02222050529765419,
+              "kBT_eV": 0.03055723111122957,
+              "coupling_0": 1.4700752984692655,
+              "coupling_1": 2.465991150115956
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 12,
+            "weighted_rss": 0.9873633744936332
+          },
+          {
+            "start": 3,
+            "initial": {
+              "phonon_energy_eV": 0.040828586643078826,
+              "linewidth_eV": 0.027201098864786964,
+              "kBT_eV": 0.0279446916569973,
+              "coupling_0": 1.5418329186751685,
+              "coupling_1": 2.718742725229732
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 53,
+            "weighted_rss": 1.0120515919405342
+          },
+          {
+            "start": 4,
+            "initial": {
+              "phonon_energy_eV": 0.029288740887411464,
+              "linewidth_eV": 0.02166740465544593,
+              "kBT_eV": 0.03229264727946557,
+              "coupling_0": 1.5241060898516423,
+              "coupling_1": 1.7155499368128289
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 21,
+            "weighted_rss": 0.8977346692356476
+          }
+        ],
+        "forward_evaluations": 651,
+        "projected_jacobian_rank": 5,
+        "projected_jacobian_columns": 5,
+        "projected_jacobian_singular_values": [
+          381.545390878483,
+          76.23422800522756,
+          53.46602725670051,
+          6.053322204316428,
+          2.6164820149628985
+        ],
+        "nonlinear_bounds": {
+          "phonon_energy_eV": [
+            0.005,
+            0.1
+          ],
+          "linewidth_eV": [
+            0.0005,
+            0.1
+          ],
+          "kBT_eV": [
+            0.0001,
+            0.15
+          ],
+          "coupling_0": [
+            0.0,
+            5.0
+          ],
+          "coupling_1": [
+            0.0,
+            5.0
+          ]
+        }
+      },
+      "truncation": {
+        "cutoff": null,
+        "tail_tolerance": 1e-11,
+        "channels": [
+          {
+            "first_sideband": -16,
+            "last_sideband": 21,
+            "terms": 38,
+            "retained_weight": 0.9999999999954833,
+            "omitted_thermal_mass_estimate": 4.516946515395468e-12,
+            "adaptive": true,
+            "exciton_energy_eV": 1.281,
+            "spectral_absolute_truncation_bound_estimate": 2.6328689828463683e-11
+          },
+          {
+            "first_sideband": -22,
+            "last_sideband": 35,
+            "terms": 58,
+            "retained_weight": 0.9999999999991674,
+            "omitted_thermal_mass_estimate": 8.32223462707362e-13,
+            "adaptive": true,
+            "exciton_energy_eV": 0.897,
+            "spectral_absolute_truncation_bound_estimate": 8.021268649062897e-12
+          }
+        ],
+        "relative_l2_change_at_tighter_adaptive_tail": 1.3329027507357366e-14
+      }
+    },
+    "II": {
+      "model": "II",
+      "spec": {
+        "model": "II",
+        "exciton_energies_eV": [
+          1.280999,
+          0.898
+        ],
+        "shared_phonon_energy": true,
+        "shared_linewidth": true,
+        "fixed_phonon_energies_eV": null
+      },
+      "parameters": {
+        "phonon_energy_eV": 0.037101593644271486,
+        "linewidth_eV": 0.024117483408533542,
+        "kBT_eV": 0.01989344490501588,
+        "coupling_0": 0.8098046118910207,
+        "coupling_1": 1.2570481146692853,
+        "mixing_angle_0_rad": 0.520875079583971,
+        "mixing_angle_1_rad": 0.4904732703038889
+      },
+      "channels": [
+        {
+          "channel": {
+            "exciton_energy_eV": 1.280999,
+            "coupling": 0.8098046118910207,
+            "amplitude": 0.18031923118436266,
+            "mixing_angle_rad": 0.520875079583971
+          },
+          "phonon_energy_eV": 0.037101593644271486,
+          "linewidth_eV": 0.024117483408533542
+        },
+        {
+          "channel": {
+            "exciton_energy_eV": 0.898,
+            "coupling": 1.2570481146692853,
+            "amplitude": 0.2788614025649304,
+            "mixing_angle_rad": 0.4904732703038889
+          },
+          "phonon_energy_eV": 0.037101593644271486,
+          "linewidth_eV": 0.024117483408533542
+        }
+      ],
+      "amplitudes": [
+        0.18031923118436266,
+        0.2788614025649304
+      ],
+      "metrics": {
+        "n_observations": 110,
+        "rss": 0.6052348142290899,
+        "mse": 0.005502134674809908,
+        "weighted_rss": 0.60523481422909,
+        "chi_square": null,
+        "nominal_dof": 101
+      },
+      "optimizer": {
+        "method": "bounded least_squares with NNLS-profiled amplitudes",
+        "success": true,
+        "multistart_seed": 2026,
+        "trials": [
+          {
+            "start": 0,
+            "initial": {
+              "phonon_energy_eV": 0.032,
+              "linewidth_eV": 0.0231,
+              "kBT_eV": 0.0232,
+              "coupling_0": 0.85,
+              "coupling_1": 1.34,
+              "mixing_angle_0_rad": 0.6,
+              "mixing_angle_1_rad": 0.48
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 19,
+            "weighted_rss": 0.7055373014295504
+          },
+          {
+            "start": 1,
+            "initial": {
+              "phonon_energy_eV": 0.025655020198736805,
+              "linewidth_eV": 0.024489299162433538,
+              "kBT_eV": 0.012201307172325418,
+              "coupling_0": 1.1466014883980975,
+              "coupling_1": 1.5538287382109521,
+              "mixing_angle_0_rad": 0.5561928772170954,
+              "mixing_angle_1_rad": 0.4425660806171789
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 52,
+            "weighted_rss": 0.6793782640773006
+          },
+          {
+            "start": 2,
+            "initial": {
+              "phonon_energy_eV": 0.0344306829422305,
+              "linewidth_eV": 0.02155426175476994,
+              "kBT_eV": 0.02188972860525336,
+              "coupling_0": 1.0030144117519364,
+              "coupling_1": 1.5124262439342129,
+              "mixing_angle_0_rad": 0.5903808096548725,
+              "mixing_angle_1_rad": 0.46974281241769655
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 13,
+            "weighted_rss": 0.6351640502067673
+          },
+          {
+            "start": 3,
+            "initial": {
+              "phonon_energy_eV": 0.03328733058132516,
+              "linewidth_eV": 0.019554043771653318,
+              "kBT_eV": 0.02085824846499359,
+              "coupling_0": 0.9665052882938638,
+              "coupling_1": 1.2962882642978106,
+              "mixing_angle_0_rad": 0.3938360736484915,
+              "mixing_angle_1_rad": 0.4227265536440152
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 24,
+            "weighted_rss": 0.6052348143630832
+          },
+          {
+            "start": 4,
+            "initial": {
+              "phonon_energy_eV": 0.037252972842348304,
+              "linewidth_eV": 0.02175856699121907,
+              "kBT_eV": 0.02233734970062932,
+              "coupling_0": 0.9863902834863881,
+              "coupling_1": 1.9512444521466712,
+              "mixing_angle_0_rad": 0.4930216992197568,
+              "mixing_angle_1_rad": 0.6417848176120917
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 26,
+            "weighted_rss": 0.60523481422909
+          }
+        ],
+        "forward_evaluations": 930,
+        "projected_jacobian_rank": 7,
+        "projected_jacobian_columns": 7,
+        "projected_jacobian_singular_values": [
+          388.19703193137343,
+          79.57828571365452,
+          56.95291461594644,
+          12.595249602663072,
+          6.153432222529064,
+          3.4778674020018316,
+          2.1222252403251005
+        ],
+        "nonlinear_bounds": {
+          "phonon_energy_eV": [
+            0.005,
+            0.1
+          ],
+          "linewidth_eV": [
+            0.0005,
+            0.1
+          ],
+          "kBT_eV": [
+            0.0001,
+            0.15
+          ],
+          "coupling_0": [
+            0.0,
+            5.0
+          ],
+          "coupling_1": [
+            0.0,
+            5.0
+          ],
+          "mixing_angle_0_rad": [
+            0.0,
+            1.5707963267948966
+          ],
+          "mixing_angle_1_rad": [
+            0.0,
+            1.5707963267948966
+          ]
+        }
+      },
+      "truncation": {
+        "cutoff": null,
+        "tail_tolerance": 1e-11,
+        "channels": [
+          {
+            "first_sideband": -24,
+            "last_sideband": 29,
+            "terms": 54,
+            "retained_weight": 0.999999999999999,
+            "omitted_thermal_mass_estimate": 2.158253873034409e-35,
+            "adaptive": true,
+            "exciton_energy_eV": 1.280999,
+            "spectral_absolute_truncation_bound_estimate": 1.2387875004077812e-34
+          },
+          {
+            "first_sideband": -19,
+            "last_sideband": 32,
+            "terms": 52,
+            "retained_weight": 0.9999999999976908,
+            "omitted_thermal_mass_estimate": 2.3095969603255478e-12,
+            "adaptive": true,
+            "exciton_energy_eV": 0.898,
+            "spectral_absolute_truncation_bound_estimate": 2.1108327901365326e-11
+          }
+        ],
+        "relative_l2_change_at_tighter_adaptive_tail": 8.429325526984754e-15
+      }
+    },
+    "II_fixed_independent": {
+      "model": "II",
+      "spec": {
+        "model": "II",
+        "exciton_energies_eV": [
+          1.281,
+          0.897
+        ],
+        "shared_phonon_energy": false,
+        "shared_linewidth": false,
+        "fixed_phonon_energies_eV": [
+          0.033,
+          0.0295
+        ]
+      },
+      "parameters": {
+        "linewidth_0_eV": 0.019142921102707905,
+        "linewidth_1_eV": 0.018613448984397096,
+        "kBT_eV": 0.024261894239954392,
+        "coupling_0": 0.8330579383795081,
+        "coupling_1": 1.3966510982348443,
+        "mixing_angle_0_rad": 0.5501921100761876,
+        "mixing_angle_1_rad": 0.4754671837107695
+      },
+      "channels": [
+        {
+          "channel": {
+            "exciton_energy_eV": 1.281,
+            "coupling": 0.8330579383795081,
+            "amplitude": 0.18405620065548273,
+            "mixing_angle_rad": 0.5501921100761876
+          },
+          "phonon_energy_eV": 0.033,
+          "linewidth_eV": 0.019142921102707905
+        },
+        {
+          "channel": {
+            "exciton_energy_eV": 0.897,
+            "coupling": 1.3966510982348443,
+            "amplitude": 0.2654192482414218,
+            "mixing_angle_rad": 0.4754671837107695
+          },
+          "phonon_energy_eV": 0.0295,
+          "linewidth_eV": 0.018613448984397096
+        }
+      ],
+      "amplitudes": [
+        0.18405620065548273,
+        0.2654192482414218
+      ],
+      "metrics": {
+        "n_observations": 110,
+        "rss": 0.46936975345060356,
+        "mse": 0.0042669977586418505,
+        "weighted_rss": 0.4693697534506036,
+        "chi_square": null,
+        "nominal_dof": 101
+      },
+      "optimizer": {
+        "method": "bounded least_squares with NNLS-profiled amplitudes",
+        "success": true,
+        "multistart_seed": 2026,
+        "trials": [
+          {
+            "start": 0,
+            "initial": {
+              "linewidth_0_eV": 0.0231,
+              "linewidth_1_eV": 0.0231,
+              "kBT_eV": 0.0232,
+              "coupling_0": 0.85,
+              "coupling_1": 1.34,
+              "mixing_angle_0_rad": 0.6,
+              "mixing_angle_1_rad": 0.48
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 8,
+            "weighted_rss": 0.4693697534510886
+          },
+          {
+            "start": 1,
+            "initial": {
+              "linewidth_0_eV": 0.018519717705963133,
+              "linewidth_1_eV": 0.024489299162433538,
+              "kBT_eV": 0.012201307172325418,
+              "coupling_0": 1.1466014883980975,
+              "coupling_1": 1.5538287382109521,
+              "mixing_angle_0_rad": 0.5561928772170954,
+              "mixing_angle_1_rad": 0.4425660806171789
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 11,
+            "weighted_rss": 0.4693697534531138
+          },
+          {
+            "start": 2,
+            "initial": {
+              "linewidth_0_eV": 0.02485464924892264,
+              "linewidth_1_eV": 0.02155426175476994,
+              "kBT_eV": 0.02188972860525336,
+              "coupling_0": 1.0030144117519364,
+              "coupling_1": 1.5124262439342129,
+              "mixing_angle_0_rad": 0.5903808096548725,
+              "mixing_angle_1_rad": 0.46974281241769655
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 7,
+            "weighted_rss": 0.4693697534518748
+          },
+          {
+            "start": 3,
+            "initial": {
+              "linewidth_0_eV": 0.024029291763394096,
+              "linewidth_1_eV": 0.019554043771653318,
+              "kBT_eV": 0.02085824846499359,
+              "coupling_0": 0.9665052882938638,
+              "coupling_1": 1.2962882642978106,
+              "mixing_angle_0_rad": 0.3938360736484915,
+              "mixing_angle_1_rad": 0.4227265536440152
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 8,
+            "weighted_rss": 0.4693697534506036
+          },
+          {
+            "start": 4,
+            "initial": {
+              "linewidth_0_eV": 0.02689198977057018,
+              "linewidth_1_eV": 0.02175856699121907,
+              "kBT_eV": 0.02233734970062932,
+              "coupling_0": 0.9863902834863881,
+              "coupling_1": 1.9512444521466712,
+              "mixing_angle_0_rad": 0.4930216992197568,
+              "mixing_angle_1_rad": 0.6417848176120917
+            },
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 15,
+            "weighted_rss": 0.46936975345407417
+          }
+        ],
+        "forward_evaluations": 376,
+        "projected_jacobian_rank": 7,
+        "projected_jacobian_columns": 7,
+        "projected_jacobian_singular_values": [
+          91.8998700465787,
+          77.68370945353537,
+          57.701969208764574,
+          16.11201367352978,
+          6.483012578126066,
+          3.1175584965584764,
+          2.6790040500865926
+        ],
+        "nonlinear_bounds": {
+          "linewidth_0_eV": [
+            0.0005,
+            0.1
+          ],
+          "linewidth_1_eV": [
+            0.0005,
+            0.1
+          ],
+          "kBT_eV": [
+            0.0001,
+            0.15
+          ],
+          "coupling_0": [
+            0.0,
+            5.0
+          ],
+          "coupling_1": [
+            0.0,
+            5.0
+          ],
+          "mixing_angle_0_rad": [
+            0.0,
+            1.5707963267948966
+          ],
+          "mixing_angle_1_rad": [
+            0.0,
+            1.5707963267948966
+          ]
+        }
+      },
+      "truncation": {
+        "cutoff": null,
+        "tail_tolerance": 1e-11,
+        "channels": [
+          {
+            "first_sideband": -17,
+            "last_sideband": 22,
+            "terms": 40,
+            "retained_weight": 0.9999999999929661,
+            "omitted_thermal_mass_estimate": 7.03326370469548e-12,
+            "adaptive": true,
+            "exciton_energy_eV": 1.281,
+            "spectral_absolute_truncation_bound_estimate": 5.0400648628247974e-11
+          },
+          {
+            "first_sideband": -24,
+            "last_sideband": 40,
+            "terms": 65,
+            "retained_weight": 0.9999999999996247,
+            "omitted_thermal_mass_estimate": 3.7681106480401455e-13,
+            "adaptive": true,
+            "exciton_energy_eV": 0.897,
+            "spectral_absolute_truncation_bound_estimate": 4.3062490564369786e-12
+          }
+        ],
+        "relative_l2_change_at_tighter_adaptive_tail": 1.6462156806178355e-14
+      }
+    }
+  }
+}
