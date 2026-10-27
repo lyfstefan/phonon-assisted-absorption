@@ -49,7 +49,7 @@ def run(output, font_path=None):
             y,
             fit,
             "Synthetic observations",
-            rf"$\mathrm{{{model}}}$",
+            f"Model {model}",
             font_path=font_path,
         )
         apply_style(font_path=font_path)
@@ -81,7 +81,7 @@ def run(output, font_path=None):
                     linestyle=DASH[ti],
                 )
             axes[row, col].set(
-                title=rf"$\mathrm{{{model}}}$",
+                title=f"Model {model}",
                 xlabel=r"$E$ (eV)",
                 ylabel=r"$\alpha$ (arb. units)",
             )
@@ -112,6 +112,7 @@ def run(output, font_path=None):
             color=[C["blue"], C["orange"]][ci],
             label=label,
         )
+    fig.suptitle("Model II")
     ax.plot(energy, total, c=C["black"], label="Total")
     ax.set(
         xlabel=r"$E$ (eV)",

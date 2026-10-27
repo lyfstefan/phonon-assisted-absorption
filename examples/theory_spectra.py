@@ -30,7 +30,7 @@ def main():
         ax.plot(
             energy,
             y,
-            label=rf"$\mathrm{{{model}}}$",
+            label=f"Model {model}",
             color=[C["blue"], C["red"]][index],
             linestyle=DASH[index],
         )

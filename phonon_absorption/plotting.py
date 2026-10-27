@@ -76,7 +76,7 @@ def plot_fit(
         ncol=2 if len(windows) > 1 else 1,
         frameon=False,
     )
-    heading = fig.suptitle(title or rf"$\mathrm{{{fit['model']}}}$")
+    heading = fig.suptitle(title or f"Model {fit['model']}")
     heading.set_in_layout(False)
     fig.set_layout_engine("constrained", rect=(0, 0, 1, 0.78))
     return fig
