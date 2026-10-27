@@ -9,7 +9,7 @@
   "phonon_absorption/models.py": "276c7122a0b175db98e8b2dbb42a767e4889eee4a81bda9766fc9d3a34594a86",
   "phonon_absorption/output.py": "2eadad67728aa6d8aebc2d799ad480456a11948ffca91809d7b775912e9dfb32",
   "phonon_absorption/parameters.py": "04043430831c751f6dca76a4a0b93c16194cdddd7aac48a4dae199f06a299d2a",
-  "phonon_absorption/plotting.py": "226816581e061545567a4b1b73a492ffba505914c03a75fd1c0d20488770c094",
+  "phonon_absorption/plotting.py": "fc146eb358d4b29b897dd048a5d673a496b41f37230951c9fbe5a9c32656a9a6",
   "phonon_absorption/publication_style.py": "eeb59075fd52bf876c4df77013186f8ca32c37c9dbd38fba31d6bb7c53877442",
   "phonon_absorption/thermal.py": "78611845a4e7a5d4dadda38c31ad594ad2c03f8291fcf0311a17b6cfbb91b287",
   "examples/fit_synthetic.py": "125baa51f1f28c63151f7a07c1f1772c495271518b9346b103073f5626686c27",

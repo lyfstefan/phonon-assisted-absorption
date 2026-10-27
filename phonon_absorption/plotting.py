@@ -46,13 +46,14 @@ def plot_fit(
         use = (x >= lo) & (x <= hi)
         grid = np.linspace(lo, hi, 400)
         axes[0, col].scatter(
-            x[use], y[use], s=10, c=C["black"], alpha=0.8, label=data_label
+            x[use], y[use], s=10, c=C["black"], alpha=0.8, label=data_label, zorder=2
         )
         axes[0, col].plot(
             grid,
             predict_fit(grid, fit),
             color=C["red"],
             lw=1.2,
+            zorder=3,
             label=f"Model {fit['model']} fit",
         )
         axes[1, col].scatter(x[use], (y - pred)[use], s=9, color=C["blue"])
